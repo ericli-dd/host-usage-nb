@@ -1,1 +1,1543 @@
-{"data":{"type":"notebooks","attributes":{"metadata":{"type":null},"name":"Usage Summary Breakdown - EricLi - latest","time":{"live_span":"1d"},"cells":[{"id":"nd5wgwer","type":"notebook_cells","attributes":{"definition":{"type":"markdown","text":"# Infrastructure"}}},{"id":"ntjnru17","type":"notebook_cells","attributes":{"definition":{"title":"Agent hosts","type":"query_table","requests":[{"queries":[{"name":"query1","data_source":"metrics","query":"avg:system.cpu.user{*} by {host}","aggregator":"avg"}],"response_format":"scalar","sort":{"count":500,"order_by":[{"type":"formula","index":0,"order":"desc"}]},"formulas":[{"formula":"query1","cell_display_mode":"bar"}]}],"has_search_bar":"auto"},"time":null,"split_by":{"tags":[],"keys":[]},"graph_size":"m"}},{"id":"ccjogqxq","type":"notebook_cells","attributes":{"definition":{"title":"AWS hosts","type":"query_table","requests":[{"queries":[{"name":"query1","data_source":"metrics","query":"avg:aws.ec2.cpuutilization{*} by {host}","aggregator":"avg"}],"response_format":"scalar","sort":{"count":500,"order_by":[{"type":"formula","index":0,"order":"desc"}]},"formulas":[{"cell_display_mode":"bar","formula":"query1"}]}],"has_search_bar":"auto"},"time":null,"graph_size":"m"}},{"id":"jn1e7sqg","type":"notebook_cells","attributes":{"definition":{"title":"Azure hosts","type":"query_table","requests":[{"queries":[{"name":"query1","data_source":"metrics","query":"avg:azure.vm.percentage_cpu{*} by {host}","aggregator":"avg"}],"response_format":"scalar","sort":{"count":500,"order_by":[{"type":"formula","index":0,"order":"desc"}]},"formulas":[{"cell_display_mode":"bar","formula":"query1"}]}],"has_search_bar":"auto"},"time":null}},{"id":"wg3xcasq","type":"notebook_cells","attributes":{"definition":{"title":"GCP hosts","type":"query_table","requests":[{"queries":[{"name":"query1","data_source":"metrics","query":"avg:gcp.gce.instance.cpu.utilization{*} by {host}","aggregator":"avg"}],"response_format":"scalar","sort":{"count":500,"order_by":[{"type":"formula","index":0,"order":"desc"}]},"formulas":[{"cell_display_mode":"bar","formula":"query1"}]}],"has_search_bar":"auto"},"time":null}},{"id":"kw1txifr","type":"notebook_cells","attributes":{"definition":{"title":"VSphere VM","type":"query_table","requests":[{"queries":[{"name":"query1","data_source":"metrics","query":"avg:vsphere.cpu.usage.avg{*} by {host}","aggregator":"avg"}],"response_format":"scalar","sort":{"count":500,"order_by":[{"type":"formula","index":0,"order":"desc"}]},"formulas":[{"cell_display_mode":"bar","formula":"query1"}]}],"has_search_bar":"auto"},"time":null}},{"id":"pz0wr5vh","type":"notebook_cells","attributes":{"definition":{"title":"Azure App Service Hosts","type":"query_table","requests":[{"queries":[{"data_source":"metrics","name":"query1","query":"avg:azure.web_serverfarms.cpu_percentage{*} by {name,instance}","aggregator":"avg"}],"response_format":"scalar","sort":{"count":500,"order_by":[{"type":"formula","index":0,"order":"desc"}]},"formulas":[{"cell_display_mode":"bar","formula":"query1"}]}],"has_search_bar":"auto"},"time":null,"split_by":{"tags":[],"keys":[]}}},{"id":"rrgsa0jv","type":"notebook_cells","attributes":{"definition":{"type":"markdown","text":"# Containers"}}},{"id":"7ppej201","type":"notebook_cells","attributes":{"definition":{"title":"Kubernetes","type":"query_table","requests":[{"queries":[{"name":"query1","data_source":"metrics","query":"avg:kubernetes.cpu.user.total{*} by {container_id}","aggregator":"avg"}],"response_format":"scalar","sort":{"count":500,"order_by":[{"type":"formula","index":0,"order":"desc"}]},"formulas":[{"cell_display_mode":"bar","formula":"query1"}]}],"has_search_bar":"auto"},"time":null}},{"id":"znlc8sat","type":"notebook_cells","attributes":{"definition":{"title":"Docker","type":"query_table","requests":[{"queries":[{"name":"query1","data_source":"metrics","query":"avg:docker.cpu.user{*} by {container_id}","aggregator":"avg"}],"response_format":"scalar","sort":{"count":500,"order_by":[{"type":"formula","index":0,"order":"desc"}]},"formulas":[{"cell_display_mode":"bar","formula":"query1"}]}],"has_search_bar":"auto"},"time":null}},{"id":"9616q6lj","type":"notebook_cells","attributes":{"definition":{"type":"markdown","text":"# APM"}}},{"id":"jdfstro7","type":"notebook_cells","attributes":{"definition":{"title":"Agent ","type":"query_table","requests":[{"queries":[{"data_source":"metrics","name":"query1","query":"max:datadog.apm.host_instance{*} by {host}","aggregator":"max"}],"response_format":"scalar","sort":{"count":100,"order_by":[{"type":"formula","index":0,"order":"desc"}]},"formulas":[{"formula":"query1","cell_display_mode":"bar"}]}],"has_search_bar":"auto"},"time":null,"split_by":{"tags":[],"keys":[]},"graph_size":"m"}},{"id":"mn2jsvep","type":"notebook_cells","attributes":{"definition":{"title":"Azure App Services","type":"query_table","requests":[{"queries":[{"data_source":"metrics","name":"query1","query":"max:datadog.apm.azure_resource_instance{*} by {resource_id}","aggregator":"max"}],"response_format":"scalar","sort":{"count":100,"order_by":[{"type":"formula","index":0,"order":"desc"}]},"formulas":[{"formula":"query1","cell_display_mode":"bar"}]}],"has_search_bar":"auto"},"time":null,"split_by":{"tags":[],"keys":[]},"graph_size":"m"}},{"id":"viv0iwqh","type":"notebook_cells","attributes":{"definition":{"title":"Serverless","type":"query_table","requests":[{"queries":[{"data_source":"metrics","name":"query1","query":"sum:datadog.serverless.traced_invocations{*} by {resource_provider,resource_type,resource_id}.as_count()","aggregator":"max"}],"response_format":"scalar","sort":{"count":100,"order_by":[{"type":"formula","index":0,"order":"desc"}]},"formulas":[{"cell_display_mode":"bar","formula":"query1"}]}],"has_search_bar":"auto"},"time":null,"graph_size":"m"}},{"id":"i4zlv2no","type":"notebook_cells","attributes":{"definition":{"title":"USM","type":"query_table","requests":[{"queries":[{"data_source":"metrics","name":"query1","query":"max:datadog.apm.usm_host_instance{*} by {host,instance-id}","aggregator":"max"}],"response_format":"scalar","sort":{"count":100,"order_by":[{"type":"formula","index":0,"order":"desc"}]},"formulas":[{"formula":"query1","cell_display_mode":"bar"}]}],"has_search_bar":"auto"},"time":null,"split_by":{"tags":[],"keys":[]},"graph_size":"m"}},{"id":"jdzwj7rz","type":"notebook_cells","attributes":{"definition":{"title":"OTEL APM Hosts","type":"query_table","requests":[{"queries":[{"data_source":"metrics","name":"query1","query":"max:otel.datadog_exporter.traces.running{*} by {host}","aggregator":"max"}],"response_format":"scalar","sort":{"count":100,"order_by":[{"type":"formula","index":0,"order":"desc"}]},"formulas":[{"formula":"query1","cell_display_mode":"bar"}]}],"has_search_bar":"auto"},"time":null,"split_by":{"tags":[],"keys":[]},"graph_size":"m"}},{"id":"d5wp0xqu","type":"notebook_cells","attributes":{"definition":{"type":"markdown","text":"# Profiling"}}},{"id":"tqjaxmng","type":"notebook_cells","attributes":{"definition":{"title":"Containers","type":"query_table","requests":[{"queries":[{"data_source":"metrics","name":"query1","query":"avg:datadog.profiling.agent{*} by {container_id}","aggregator":"avg"}],"response_format":"scalar","sort":{"count":500,"order_by":[{"type":"formula","index":0,"order":"desc"}]},"formulas":[{"formula":"query1","cell_display_mode":"bar"}]}],"has_search_bar":"auto"},"time":null,"split_by":{"tags":[],"keys":[]},"graph_size":"m"}},{"id":"u1rfwhzr","type":"notebook_cells","attributes":{"definition":{"title":"Hosts","type":"query_table","requests":[{"queries":[{"data_source":"metrics","name":"query1","query":"avg:system.cpu.user{*} by {host}","aggregator":"avg"}],"response_format":"scalar","sort":{"count":500,"order_by":[{"type":"formula","index":0,"order":"desc"}]},"formulas":[{"formula":"query1","cell_display_mode":"bar"}]}],"has_search_bar":"auto"},"time":null,"split_by":{"tags":[],"keys":[]},"graph_size":"m"}},{"id":"qxst1f75","type":"notebook_cells","attributes":{"definition":{"title":"Fargate tasks","type":"query_table","requests":[{"queries":[{"data_source":"metrics","name":"query1","query":"avg:datadog.profiling.fargate{*} by {task_arn}","aggregator":"avg"}],"response_format":"scalar","sort":{"count":500,"order_by":[{"type":"formula","index":0,"order":"desc"}]},"formulas":[{"cell_display_mode":"bar","formula":"query1"}]}],"has_search_bar":"auto"},"time":null,"graph_size":"m"}},{"id":"fxn120t5","type":"notebook_cells","attributes":{"definition":{"type":"markdown","text":"# Serverless"}}},{"id":"bsgo64cr","type":"notebook_cells","attributes":{"definition":{"title":"Fargate ECS tasks","type":"query_table","requests":[{"queries":[{"data_source":"metrics","name":"query1","query":"avg:ecs.fargate.cpu.user{*} by {task_arn}","aggregator":"avg"}],"response_format":"scalar","sort":{"count":500,"order_by":[{"type":"formula","index":0,"order":"desc"}]},"formulas":[{"cell_display_mode":"bar","formula":"query1"}]}],"has_search_bar":"auto"},"time":null,"graph_size":"m"}},{"id":"1gyof02o","type":"notebook_cells","attributes":{"definition":{"title":"Fargate EKS pods","type":"query_table","requests":[{"queries":[{"data_source":"metrics","name":"query1","query":"avg:eks.fargate.pods.running{*} by {pod_name,virtual_node}","aggregator":"avg"}],"response_format":"scalar","sort":{"count":500,"order_by":[{"type":"formula","index":0,"order":"desc"}]},"formulas":[{"cell_display_mode":"bar","formula":"query1"}]}],"has_search_bar":"auto"},"time":null,"graph_size":"m"}},{"id":"ya0zdib7","type":"notebook_cells","attributes":{"definition":{"title":"Lambda Invocations","type":"query_table","requests":[{"queries":[{"data_source":"metrics","name":"query1","query":"sum:aws.lambda.invocations{!dd_forwarder_version:*} by {functionname,aws_account,region}.as_count()","aggregator":"avg"}],"response_format":"scalar","sort":{"count":500,"order_by":[{"type":"formula","index":0,"order":"desc"}]},"formulas":[{"cell_display_mode":"bar","formula":"query1"}]}],"has_search_bar":"auto"},"time":null,"graph_size":"m"}},{"id":"gtm1pvzu","type":"notebook_cells","attributes":{"definition":{"title":"Lambda Enhanced Invocations","type":"query_table","requests":[{"queries":[{"data_source":"metrics","name":"query1","query":"sum:aws.lambda.enhanced.invocations{!dd_forwarder_version:*} by {functionname,aws_account,region}.as_count()","aggregator":"avg"}],"response_format":"scalar","sort":{"count":500,"order_by":[{"type":"formula","index":0,"order":"desc"}]},"formulas":[{"cell_display_mode":"bar","formula":"query1"}]}],"has_search_bar":"auto"},"time":null,"graph_size":"m"}},{"id":"dde9fyjp","type":"notebook_cells","attributes":{"definition":{"title":"Azure Container App Instances","type":"query_table","requests":[{"queries":[{"data_source":"metrics","name":"query1","query":"avg:azure.web_serverfarms.current_instance_count{!plan_tier:dynamic} by {resource_id}","aggregator":"avg"}],"response_format":"scalar","sort":{"count":500,"order_by":[{"type":"formula","index":0,"order":"desc"}]},"formulas":[{"cell_display_mode":"bar","formula":"query1"}]}],"has_search_bar":"auto"},"time":null,"split_by":{"tags":[],"keys":[]},"graph_size":"m"}},{"id":"tijqbfwu","type":"notebook_cells","attributes":{"definition":{"type":"markdown","text":"# Security "}}},{"id":"v0dkjw8j","type":"notebook_cells","attributes":{"definition":{"type":"markdown","text":"## Cloud Workload Security (CWS)"}}},{"id":"1vb8scna","type":"notebook_cells","attributes":{"definition":{"title":"CWS Hosts","type":"query_table","requests":[{"queries":[{"data_source":"metrics","name":"query1","query":"avg:datadog.security_agent.runtime.running{*} by {host}","aggregator":"avg"}],"response_format":"scalar","sort":{"count":500,"order_by":[{"type":"formula","index":0,"order":"desc"}]},"formulas":[{"cell_display_mode":"bar","formula":"query1"}]}],"has_search_bar":"auto"},"time":null,"graph_size":"m"}},{"id":"ht1pftt5","type":"notebook_cells","attributes":{"definition":{"title":"CWS Containers","type":"query_table","requests":[{"queries":[{"data_source":"metrics","name":"query1","query":"avg:datadog.security_agent.runtime.containers_running{*} by {container_id}","aggregator":"avg"}],"response_format":"scalar","sort":{"count":500,"order_by":[{"type":"formula","index":0,"order":"desc"}]},"formulas":[{"formula":"query1","cell_display_mode":"bar"}]}],"has_search_bar":"auto"},"time":null,"split_by":{"tags":[],"keys":[]},"graph_size":"m"}},{"id":"mgar8d6o","type":"notebook_cells","attributes":{"definition":{"type":"markdown","text":"## Cloud Security Management (CSM)"}}},{"id":"dc3ayjcv","type":"notebook_cells","attributes":{"definition":{"title":"CSPM Hosts - Agent","type":"query_table","requests":[{"queries":[{"data_source":"metrics","name":"query1","query":"avg:datadog.security_agent.compliance.running{*} by {host}","aggregator":"avg"}],"response_format":"scalar","sort":{"count":500,"order_by":[{"type":"formula","index":0,"order":"desc"}]},"formulas":[{"cell_display_mode":"bar","formula":"query1"}]}],"has_search_bar":"auto"},"time":null,"graph_size":"m"}},{"id":"mkv1igtn","type":"notebook_cells","attributes":{"definition":{"title":"CSPM Hosts - AWS","type":"query_table","requests":[{"queries":[{"data_source":"metrics","name":"query1","query":"avg:datadog.cloud_configuration.running{*} by {host}","aggregator":"avg"}],"response_format":"scalar","sort":{"count":500,"order_by":[{"type":"formula","index":0,"order":"desc"}]},"formulas":[{"cell_display_mode":"bar","formula":"query1"}]}],"has_search_bar":"auto"},"time":null,"graph_size":"m"}},{"id":"39giorsj","type":"notebook_cells","attributes":{"definition":{"title":"CSPM Hosts - GCP","type":"query_table","requests":[{"queries":[{"data_source":"metrics","name":"query1","query":"avg:datadog.cspm_gcp.running{*} by {host}","aggregator":"avg"}],"response_format":"scalar","sort":{"count":500,"order_by":[{"type":"formula","index":0,"order":"desc"}]},"formulas":[{"cell_display_mode":"bar","formula":"query1"}]}],"has_search_bar":"auto"},"time":null,"split_by":{"tags":[],"keys":[]},"graph_size":"m"}},{"id":"apsb9wpz","type":"notebook_cells","attributes":{"definition":{"title":"CSPM Hosts - Azure","type":"query_table","requests":[{"queries":[{"data_source":"metrics","name":"query1","query":"avg:datadog.cspm_azure.running{*} by {host}","aggregator":"avg"}],"response_format":"scalar","sort":{"count":500,"order_by":[{"type":"formula","index":0,"order":"desc"}]},"formulas":[{"cell_display_mode":"bar","formula":"query1"}]}],"has_search_bar":"auto"},"time":null,"graph_size":"m"}},{"id":"lv9ly1wm","type":"notebook_cells","attributes":{"definition":{"title":"CSPM Hosts - Azure App Services","type":"query_table","requests":[{"queries":[{"data_source":"metrics","name":"query1","query":"avg:datadog.cspm_azure_asp.running{*} by {subscription_id,resource_group,name}","aggregator":"avg"}],"response_format":"scalar","sort":{"count":500,"order_by":[{"type":"formula","index":0,"order":"desc"}]},"formulas":[{"cell_display_mode":"bar","formula":"query1"}]}],"has_search_bar":"auto"},"time":null,"graph_size":"m"}},{"id":"r1kmlqif","type":"notebook_cells","attributes":{"definition":{"title":"CSPM Containers","type":"query_table","requests":[{"queries":[{"data_source":"metrics","name":"query1","query":"avg:datadog.security_agent.compliance.containers_running{*} by {container_id}","aggregator":"avg"}],"response_format":"scalar","sort":{"count":500,"order_by":[{"type":"formula","index":0,"order":"desc"}]},"formulas":[{"formula":"query1","cell_display_mode":"bar"}]}],"has_search_bar":"auto"},"time":null,"split_by":{"tags":[],"keys":[]},"graph_size":"m"}},{"id":"18hllxet","type":"notebook_cells","attributes":{"definition":{"type":"markdown","text":"## Application Security Management (ASM)"}}},{"id":"4ohb04k3","type":"notebook_cells","attributes":{"definition":{"title":"Hosts","type":"query_table","requests":[{"queries":[{"data_source":"metrics","name":"query1","query":"avg:datadog.appsec.host_instance{*} by {host}","aggregator":"avg"}],"response_format":"scalar","sort":{"count":500,"order_by":[{"type":"formula","index":0,"order":"desc"}]},"formulas":[{"cell_display_mode":"bar","formula":"query1"}]}],"has_search_bar":"auto"},"time":null,"graph_size":"m"}},{"id":"fbjwwvf3","type":"notebook_cells","attributes":{"definition":{"title":"ECS Fargate Tasks","type":"query_table","requests":[{"queries":[{"data_source":"metrics","name":"query1","query":"avg:datadog.appsec.fargate_task_instance{*} by {task_arn}","aggregator":"avg"}],"response_format":"scalar","sort":{"count":500,"order_by":[{"type":"formula","index":0,"order":"desc"}]},"formulas":[{"cell_display_mode":"bar","formula":"query1"}]}],"has_search_bar":"auto"},"time":null,"graph_size":"m"}},{"id":"19hoigjp","type":"notebook_cells","attributes":{"definition":{"type":"markdown","text":"## Software Composition Analysis (SCA)"}}},{"id":"1ijv8xor","type":"notebook_cells","attributes":{"definition":{"title":"Hosts","type":"query_table","requests":[{"queries":[{"name":"query1","data_source":"metrics","query":"sum:datadog.appsec.risk_management.sca.host_instance{*} by {host}.as_count()","aggregator":"avg"}],"response_format":"scalar","sort":{"count":500,"order_by":[{"type":"formula","index":0,"order":"desc"}]},"formulas":[{"formula":"count_not_null(query1)","cell_display_mode":"bar"}]}],"has_search_bar":"auto"},"time":null}},{"id":"puga3vm7","type":"notebook_cells","attributes":{"definition":{"title":"Fargate Tasks","type":"query_table","requests":[{"queries":[{"name":"query1","data_source":"metrics","query":"sum:datadog.sca.fargate_task_instance{*} by {task_arn}.as_count()","aggregator":"avg"}],"response_format":"scalar","sort":{"count":500,"order_by":[{"type":"formula","index":0,"order":"desc"}]},"formulas":[{"formula":"count_not_null(query1)","cell_display_mode":"bar"}]}],"has_search_bar":"auto"},"time":null}}],"template_variables":[]}}}
+{
+  "data": {
+    "type": "notebooks",
+    "attributes": {
+      "metadata": {
+        "type": null
+      },
+      "name": "Usage Summary Breakdown - EricLi - latest",
+      "time": {
+        "live_span": "1d"
+      },
+      "cells": [
+        {
+          "id": "nd5wgwer",
+          "type": "notebook_cells",
+          "attributes": {
+            "definition": {
+              "type": "markdown",
+              "text": "# Infrastructure"
+            }
+          }
+        },
+        {
+          "id": "ntjnru17",
+          "type": "notebook_cells",
+          "attributes": {
+            "definition": {
+              "title": "Agent hosts",
+              "type": "query_table",
+              "requests": [
+                {
+                  "queries": [
+                    {
+                      "name": "query1",
+                      "data_source": "metrics",
+                      "query": "avg:system.cpu.user{*} by {host}",
+                      "aggregator": "avg"
+                    }
+                  ],
+                  "response_format": "scalar",
+                  "sort": {
+                    "count": 500,
+                    "order_by": [
+                      {
+                        "type": "formula",
+                        "index": 0,
+                        "order": "desc"
+                      }
+                    ]
+                  },
+                  "formulas": [
+                    {
+                      "formula": "query1",
+                      "cell_display_mode": "bar"
+                    }
+                  ]
+                }
+              ],
+              "has_search_bar": "auto"
+            },
+            "time": null,
+            "split_by": {
+              "tags": [],
+              "keys": []
+            },
+            "graph_size": "m"
+          }
+        },
+        {
+          "id": "ccjogqxq",
+          "type": "notebook_cells",
+          "attributes": {
+            "definition": {
+              "title": "AWS hosts",
+              "type": "query_table",
+              "requests": [
+                {
+                  "queries": [
+                    {
+                      "name": "query1",
+                      "data_source": "metrics",
+                      "query": "avg:aws.ec2.cpuutilization{*} by {host}",
+                      "aggregator": "avg"
+                    }
+                  ],
+                  "response_format": "scalar",
+                  "sort": {
+                    "count": 500,
+                    "order_by": [
+                      {
+                        "type": "formula",
+                        "index": 0,
+                        "order": "desc"
+                      }
+                    ]
+                  },
+                  "formulas": [
+                    {
+                      "cell_display_mode": "bar",
+                      "formula": "query1"
+                    }
+                  ]
+                }
+              ],
+              "has_search_bar": "auto"
+            },
+            "time": null,
+            "graph_size": "m"
+          }
+        },
+        {
+          "id": "jn1e7sqg",
+          "type": "notebook_cells",
+          "attributes": {
+            "definition": {
+              "title": "Azure hosts",
+              "type": "query_table",
+              "requests": [
+                {
+                  "queries": [
+                    {
+                      "name": "query1",
+                      "data_source": "metrics",
+                      "query": "avg:azure.vm.percentage_cpu{*} by {host}",
+                      "aggregator": "avg"
+                    }
+                  ],
+                  "response_format": "scalar",
+                  "sort": {
+                    "count": 500,
+                    "order_by": [
+                      {
+                        "type": "formula",
+                        "index": 0,
+                        "order": "desc"
+                      }
+                    ]
+                  },
+                  "formulas": [
+                    {
+                      "cell_display_mode": "bar",
+                      "formula": "query1"
+                    }
+                  ]
+                }
+              ],
+              "has_search_bar": "auto"
+            },
+            "time": null
+          }
+        },
+        {
+          "id": "wg3xcasq",
+          "type": "notebook_cells",
+          "attributes": {
+            "definition": {
+              "title": "GCP hosts",
+              "type": "query_table",
+              "requests": [
+                {
+                  "queries": [
+                    {
+                      "name": "query1",
+                      "data_source": "metrics",
+                      "query": "avg:gcp.gce.instance.cpu.utilization{*} by {host}",
+                      "aggregator": "avg"
+                    }
+                  ],
+                  "response_format": "scalar",
+                  "sort": {
+                    "count": 500,
+                    "order_by": [
+                      {
+                        "type": "formula",
+                        "index": 0,
+                        "order": "desc"
+                      }
+                    ]
+                  },
+                  "formulas": [
+                    {
+                      "cell_display_mode": "bar",
+                      "formula": "query1"
+                    }
+                  ]
+                }
+              ],
+              "has_search_bar": "auto"
+            },
+            "time": null
+          }
+        },
+        {
+          "id": "kw1txifr",
+          "type": "notebook_cells",
+          "attributes": {
+            "definition": {
+              "title": "VSphere VM",
+              "type": "query_table",
+              "requests": [
+                {
+                  "queries": [
+                    {
+                      "name": "query1",
+                      "data_source": "metrics",
+                      "query": "avg:vsphere.cpu.usage.avg{*} by {host}",
+                      "aggregator": "avg"
+                    }
+                  ],
+                  "response_format": "scalar",
+                  "sort": {
+                    "count": 500,
+                    "order_by": [
+                      {
+                        "type": "formula",
+                        "index": 0,
+                        "order": "desc"
+                      }
+                    ]
+                  },
+                  "formulas": [
+                    {
+                      "cell_display_mode": "bar",
+                      "formula": "query1"
+                    }
+                  ]
+                }
+              ],
+              "has_search_bar": "auto"
+            },
+            "time": null
+          }
+        },
+        {
+          "id": "pz0wr5vh",
+          "type": "notebook_cells",
+          "attributes": {
+            "definition": {
+              "title": "Azure App Service Hosts",
+              "type": "query_table",
+              "requests": [
+                {
+                  "queries": [
+                    {
+                      "data_source": "metrics",
+                      "name": "query1",
+                      "query": "avg:azure.web_serverfarms.cpu_percentage{*} by {name,instance}",
+                      "aggregator": "avg"
+                    }
+                  ],
+                  "response_format": "scalar",
+                  "sort": {
+                    "count": 500,
+                    "order_by": [
+                      {
+                        "type": "formula",
+                        "index": 0,
+                        "order": "desc"
+                      }
+                    ]
+                  },
+                  "formulas": [
+                    {
+                      "cell_display_mode": "bar",
+                      "formula": "query1"
+                    }
+                  ]
+                }
+              ],
+              "has_search_bar": "auto"
+            },
+            "time": null,
+            "split_by": {
+              "tags": [],
+              "keys": []
+            }
+          }
+        },
+        {
+          "id": "rrgsa0jv",
+          "type": "notebook_cells",
+          "attributes": {
+            "definition": {
+              "type": "markdown",
+              "text": "# Containers"
+            }
+          }
+        },
+        {
+          "id": "7ppej201",
+          "type": "notebook_cells",
+          "attributes": {
+            "definition": {
+              "title": "Kubernetes",
+              "type": "query_table",
+              "requests": [
+                {
+                  "queries": [
+                    {
+                      "name": "query1",
+                      "data_source": "metrics",
+                      "query": "avg:kubernetes.cpu.user.total{*} by {container_id}",
+                      "aggregator": "avg"
+                    }
+                  ],
+                  "response_format": "scalar",
+                  "sort": {
+                    "count": 500,
+                    "order_by": [
+                      {
+                        "type": "formula",
+                        "index": 0,
+                        "order": "desc"
+                      }
+                    ]
+                  },
+                  "formulas": [
+                    {
+                      "cell_display_mode": "bar",
+                      "formula": "query1"
+                    }
+                  ]
+                }
+              ],
+              "has_search_bar": "auto"
+            },
+            "time": null
+          }
+        },
+        {
+          "id": "znlc8sat",
+          "type": "notebook_cells",
+          "attributes": {
+            "definition": {
+              "title": "Docker",
+              "type": "query_table",
+              "requests": [
+                {
+                  "queries": [
+                    {
+                      "name": "query1",
+                      "data_source": "metrics",
+                      "query": "avg:docker.cpu.user{*} by {container_id}",
+                      "aggregator": "avg"
+                    }
+                  ],
+                  "response_format": "scalar",
+                  "sort": {
+                    "count": 500,
+                    "order_by": [
+                      {
+                        "type": "formula",
+                        "index": 0,
+                        "order": "desc"
+                      }
+                    ]
+                  },
+                  "formulas": [
+                    {
+                      "cell_display_mode": "bar",
+                      "formula": "query1"
+                    }
+                  ]
+                }
+              ],
+              "has_search_bar": "auto"
+            },
+            "time": null
+          }
+        },
+        {
+          "id": "9616q6lj",
+          "type": "notebook_cells",
+          "attributes": {
+            "definition": {
+              "type": "markdown",
+              "text": "# APM"
+            }
+          }
+        },
+        {
+          "id": "jdfstro7",
+          "type": "notebook_cells",
+          "attributes": {
+            "definition": {
+              "title": "Agent ",
+              "type": "query_table",
+              "requests": [
+                {
+                  "queries": [
+                    {
+                      "data_source": "metrics",
+                      "name": "query1",
+                      "query": "max:datadog.apm.host_instance{*} by {host}",
+                      "aggregator": "max"
+                    }
+                  ],
+                  "response_format": "scalar",
+                  "sort": {
+                    "count": 100,
+                    "order_by": [
+                      {
+                        "type": "formula",
+                        "index": 0,
+                        "order": "desc"
+                      }
+                    ]
+                  },
+                  "formulas": [
+                    {
+                      "formula": "query1",
+                      "cell_display_mode": "bar"
+                    }
+                  ]
+                }
+              ],
+              "has_search_bar": "auto"
+            },
+            "time": null,
+            "split_by": {
+              "tags": [],
+              "keys": []
+            },
+            "graph_size": "m"
+          }
+        },
+        {
+          "id": "mn2jsvep",
+          "type": "notebook_cells",
+          "attributes": {
+            "definition": {
+              "title": "Azure App Services",
+              "type": "query_table",
+              "requests": [
+                {
+                  "queries": [
+                    {
+                      "data_source": "metrics",
+                      "name": "query1",
+                      "query": "max:datadog.apm.azure_resource_instance{*} by {resource_id}",
+                      "aggregator": "max"
+                    }
+                  ],
+                  "response_format": "scalar",
+                  "sort": {
+                    "count": 100,
+                    "order_by": [
+                      {
+                        "type": "formula",
+                        "index": 0,
+                        "order": "desc"
+                      }
+                    ]
+                  },
+                  "formulas": [
+                    {
+                      "formula": "query1",
+                      "cell_display_mode": "bar"
+                    }
+                  ]
+                }
+              ],
+              "has_search_bar": "auto"
+            },
+            "time": null,
+            "split_by": {
+              "tags": [],
+              "keys": []
+            },
+            "graph_size": "m"
+          }
+        },
+        {
+          "id": "viv0iwqh",
+          "type": "notebook_cells",
+          "attributes": {
+            "definition": {
+              "title": "Serverless",
+              "type": "query_table",
+              "requests": [
+                {
+                  "queries": [
+                    {
+                      "data_source": "metrics",
+                      "name": "query1",
+                      "query": "sum:datadog.serverless.traced_invocations{*} by {resource_provider,resource_type,resource_id}.as_count()",
+                      "aggregator": "max"
+                    }
+                  ],
+                  "response_format": "scalar",
+                  "sort": {
+                    "count": 100,
+                    "order_by": [
+                      {
+                        "type": "formula",
+                        "index": 0,
+                        "order": "desc"
+                      }
+                    ]
+                  },
+                  "formulas": [
+                    {
+                      "cell_display_mode": "bar",
+                      "formula": "query1"
+                    }
+                  ]
+                }
+              ],
+              "has_search_bar": "auto"
+            },
+            "time": null,
+            "graph_size": "m"
+          }
+        },
+        {
+          "id": "i4zlv2no",
+          "type": "notebook_cells",
+          "attributes": {
+            "definition": {
+              "title": "USM",
+              "type": "query_table",
+              "requests": [
+                {
+                  "queries": [
+                    {
+                      "data_source": "metrics",
+                      "name": "query1",
+                      "query": "max:datadog.apm.usm_host_instance{*} by {host,instance-id}",
+                      "aggregator": "max"
+                    }
+                  ],
+                  "response_format": "scalar",
+                  "sort": {
+                    "count": 100,
+                    "order_by": [
+                      {
+                        "type": "formula",
+                        "index": 0,
+                        "order": "desc"
+                      }
+                    ]
+                  },
+                  "formulas": [
+                    {
+                      "formula": "query1",
+                      "cell_display_mode": "bar"
+                    }
+                  ]
+                }
+              ],
+              "has_search_bar": "auto"
+            },
+            "time": null,
+            "split_by": {
+              "tags": [],
+              "keys": []
+            },
+            "graph_size": "m"
+          }
+        },
+        {
+          "id": "jdzwj7rz",
+          "type": "notebook_cells",
+          "attributes": {
+            "definition": {
+              "title": "OTEL APM Hosts",
+              "type": "query_table",
+              "requests": [
+                {
+                  "queries": [
+                    {
+                      "data_source": "metrics",
+                      "name": "query1",
+                      "query": "max:otel.datadog_exporter.traces.running{*} by {host}",
+                      "aggregator": "max"
+                    }
+                  ],
+                  "response_format": "scalar",
+                  "sort": {
+                    "count": 100,
+                    "order_by": [
+                      {
+                        "type": "formula",
+                        "index": 0,
+                        "order": "desc"
+                      }
+                    ]
+                  },
+                  "formulas": [
+                    {
+                      "formula": "query1",
+                      "cell_display_mode": "bar"
+                    }
+                  ]
+                }
+              ],
+              "has_search_bar": "auto"
+            },
+            "time": null,
+            "split_by": {
+              "tags": [],
+              "keys": []
+            },
+            "graph_size": "m"
+          }
+        },
+        {
+          "id": "d5wp0xqu",
+          "type": "notebook_cells",
+          "attributes": {
+            "definition": {
+              "type": "markdown",
+              "text": "# Profiling"
+            }
+          }
+        },
+        {
+          "id": "tqjaxmng",
+          "type": "notebook_cells",
+          "attributes": {
+            "definition": {
+              "title": "Containers",
+              "type": "query_table",
+              "requests": [
+                {
+                  "queries": [
+                    {
+                      "data_source": "metrics",
+                      "name": "query1",
+                      "query": "avg:datadog.profiling.agent{*} by {container_id}",
+                      "aggregator": "avg"
+                    }
+                  ],
+                  "response_format": "scalar",
+                  "sort": {
+                    "count": 500,
+                    "order_by": [
+                      {
+                        "type": "formula",
+                        "index": 0,
+                        "order": "desc"
+                      }
+                    ]
+                  },
+                  "formulas": [
+                    {
+                      "formula": "query1",
+                      "cell_display_mode": "bar"
+                    }
+                  ]
+                }
+              ],
+              "has_search_bar": "auto"
+            },
+            "time": null,
+            "split_by": {
+              "tags": [],
+              "keys": []
+            },
+            "graph_size": "m"
+          }
+        },
+        {
+          "id": "u1rfwhzr",
+          "type": "notebook_cells",
+          "attributes": {
+            "definition": {
+              "title": "Hosts",
+              "type": "query_table",
+              "requests": [
+                {
+                  "queries": [
+                    {
+                      "data_source": "metrics",
+                      "name": "query1",
+                      "query": "avg:system.cpu.user{*} by {host}",
+                      "aggregator": "avg"
+                    }
+                  ],
+                  "response_format": "scalar",
+                  "sort": {
+                    "count": 500,
+                    "order_by": [
+                      {
+                        "type": "formula",
+                        "index": 0,
+                        "order": "desc"
+                      }
+                    ]
+                  },
+                  "formulas": [
+                    {
+                      "formula": "query1",
+                      "cell_display_mode": "bar"
+                    }
+                  ]
+                }
+              ],
+              "has_search_bar": "auto"
+            },
+            "time": null,
+            "split_by": {
+              "tags": [],
+              "keys": []
+            },
+            "graph_size": "m"
+          }
+        },
+        {
+          "id": "qxst1f75",
+          "type": "notebook_cells",
+          "attributes": {
+            "definition": {
+              "title": "Fargate tasks",
+              "type": "query_table",
+              "requests": [
+                {
+                  "queries": [
+                    {
+                      "data_source": "metrics",
+                      "name": "query1",
+                      "query": "avg:datadog.profiling.fargate{*} by {task_arn}",
+                      "aggregator": "avg"
+                    }
+                  ],
+                  "response_format": "scalar",
+                  "sort": {
+                    "count": 500,
+                    "order_by": [
+                      {
+                        "type": "formula",
+                        "index": 0,
+                        "order": "desc"
+                      }
+                    ]
+                  },
+                  "formulas": [
+                    {
+                      "cell_display_mode": "bar",
+                      "formula": "query1"
+                    }
+                  ]
+                }
+              ],
+              "has_search_bar": "auto"
+            },
+            "time": null,
+            "graph_size": "m"
+          }
+        },
+        {
+          "id": "fxn120t5",
+          "type": "notebook_cells",
+          "attributes": {
+            "definition": {
+              "type": "markdown",
+              "text": "# Serverless"
+            }
+          }
+        },
+        {
+          "id": "bsgo64cr",
+          "type": "notebook_cells",
+          "attributes": {
+            "definition": {
+              "title": "Fargate ECS tasks",
+              "type": "query_table",
+              "requests": [
+                {
+                  "queries": [
+                    {
+                      "data_source": "metrics",
+                      "name": "query1",
+                      "query": "avg:ecs.fargate.cpu.user{*} by {task_arn}",
+                      "aggregator": "avg"
+                    }
+                  ],
+                  "response_format": "scalar",
+                  "sort": {
+                    "count": 500,
+                    "order_by": [
+                      {
+                        "type": "formula",
+                        "index": 0,
+                        "order": "desc"
+                      }
+                    ]
+                  },
+                  "formulas": [
+                    {
+                      "cell_display_mode": "bar",
+                      "formula": "query1"
+                    }
+                  ]
+                }
+              ],
+              "has_search_bar": "auto"
+            },
+            "time": null,
+            "graph_size": "m"
+          }
+        },
+        {
+          "id": "1gyof02o",
+          "type": "notebook_cells",
+          "attributes": {
+            "definition": {
+              "title": "Fargate EKS pods",
+              "type": "query_table",
+              "requests": [
+                {
+                  "queries": [
+                    {
+                      "data_source": "metrics",
+                      "name": "query1",
+                      "query": "avg:eks.fargate.pods.running{*} by {pod_name,virtual_node}",
+                      "aggregator": "avg"
+                    }
+                  ],
+                  "response_format": "scalar",
+                  "sort": {
+                    "count": 500,
+                    "order_by": [
+                      {
+                        "type": "formula",
+                        "index": 0,
+                        "order": "desc"
+                      }
+                    ]
+                  },
+                  "formulas": [
+                    {
+                      "cell_display_mode": "bar",
+                      "formula": "query1"
+                    }
+                  ]
+                }
+              ],
+              "has_search_bar": "auto"
+            },
+            "time": null,
+            "graph_size": "m"
+          }
+        },
+        {
+          "id": "ya0zdib7",
+          "type": "notebook_cells",
+          "attributes": {
+            "definition": {
+              "title": "Lambda Invocations",
+              "type": "query_table",
+              "requests": [
+                {
+                  "queries": [
+                    {
+                      "data_source": "metrics",
+                      "name": "query1",
+                      "query": "sum:aws.lambda.invocations{!dd_forwarder_version:*} by {functionname,aws_account,region}.as_count()",
+                      "aggregator": "avg"
+                    }
+                  ],
+                  "response_format": "scalar",
+                  "sort": {
+                    "count": 500,
+                    "order_by": [
+                      {
+                        "type": "formula",
+                        "index": 0,
+                        "order": "desc"
+                      }
+                    ]
+                  },
+                  "formulas": [
+                    {
+                      "cell_display_mode": "bar",
+                      "formula": "query1"
+                    }
+                  ]
+                }
+              ],
+              "has_search_bar": "auto"
+            },
+            "time": null,
+            "graph_size": "m"
+          }
+        },
+        {
+          "id": "gtm1pvzu",
+          "type": "notebook_cells",
+          "attributes": {
+            "definition": {
+              "title": "Lambda Enhanced Invocations",
+              "type": "query_table",
+              "requests": [
+                {
+                  "queries": [
+                    {
+                      "data_source": "metrics",
+                      "name": "query1",
+                      "query": "sum:aws.lambda.enhanced.invocations{!dd_forwarder_version:*} by {functionname,aws_account,region}.as_count()",
+                      "aggregator": "avg"
+                    }
+                  ],
+                  "response_format": "scalar",
+                  "sort": {
+                    "count": 500,
+                    "order_by": [
+                      {
+                        "type": "formula",
+                        "index": 0,
+                        "order": "desc"
+                      }
+                    ]
+                  },
+                  "formulas": [
+                    {
+                      "cell_display_mode": "bar",
+                      "formula": "query1"
+                    }
+                  ]
+                }
+              ],
+              "has_search_bar": "auto"
+            },
+            "time": null,
+            "graph_size": "m"
+          }
+        },
+        {
+          "id": "dde9fyjp",
+          "type": "notebook_cells",
+          "attributes": {
+            "definition": {
+              "title": "Azure Container App Instances",
+              "type": "query_table",
+              "requests": [
+                {
+                  "queries": [
+                    {
+                      "data_source": "metrics",
+                      "name": "query1",
+                      "query": "avg:azure.web_serverfarms.current_instance_count{!plan_tier:dynamic} by {resource_id}",
+                      "aggregator": "avg"
+                    }
+                  ],
+                  "response_format": "scalar",
+                  "sort": {
+                    "count": 500,
+                    "order_by": [
+                      {
+                        "type": "formula",
+                        "index": 0,
+                        "order": "desc"
+                      }
+                    ]
+                  },
+                  "formulas": [
+                    {
+                      "cell_display_mode": "bar",
+                      "formula": "query1"
+                    }
+                  ]
+                }
+              ],
+              "has_search_bar": "auto"
+            },
+            "time": null,
+            "split_by": {
+              "tags": [],
+              "keys": []
+            },
+            "graph_size": "m"
+          }
+        },
+        {
+          "id": "tijqbfwu",
+          "type": "notebook_cells",
+          "attributes": {
+            "definition": {
+              "type": "markdown",
+              "text": "# Security "
+            }
+          }
+        },
+        {
+          "id": "v0dkjw8j",
+          "type": "notebook_cells",
+          "attributes": {
+            "definition": {
+              "type": "markdown",
+              "text": "## Cloud Workload Security (CWS)"
+            }
+          }
+        },
+        {
+          "id": "1vb8scna",
+          "type": "notebook_cells",
+          "attributes": {
+            "definition": {
+              "title": "CWS Hosts",
+              "type": "query_table",
+              "requests": [
+                {
+                  "queries": [
+                    {
+                      "data_source": "metrics",
+                      "name": "query1",
+                      "query": "avg:datadog.security_agent.runtime.running{*} by {host}",
+                      "aggregator": "avg"
+                    }
+                  ],
+                  "response_format": "scalar",
+                  "sort": {
+                    "count": 500,
+                    "order_by": [
+                      {
+                        "type": "formula",
+                        "index": 0,
+                        "order": "desc"
+                      }
+                    ]
+                  },
+                  "formulas": [
+                    {
+                      "cell_display_mode": "bar",
+                      "formula": "query1"
+                    }
+                  ]
+                }
+              ],
+              "has_search_bar": "auto"
+            },
+            "time": null,
+            "graph_size": "m"
+          }
+        },
+        {
+          "id": "ht1pftt5",
+          "type": "notebook_cells",
+          "attributes": {
+            "definition": {
+              "title": "CWS Containers",
+              "type": "query_table",
+              "requests": [
+                {
+                  "queries": [
+                    {
+                      "data_source": "metrics",
+                      "name": "query1",
+                      "query": "avg:datadog.security_agent.runtime.containers_running{*} by {container_id}",
+                      "aggregator": "avg"
+                    }
+                  ],
+                  "response_format": "scalar",
+                  "sort": {
+                    "count": 500,
+                    "order_by": [
+                      {
+                        "type": "formula",
+                        "index": 0,
+                        "order": "desc"
+                      }
+                    ]
+                  },
+                  "formulas": [
+                    {
+                      "formula": "query1",
+                      "cell_display_mode": "bar"
+                    }
+                  ]
+                }
+              ],
+              "has_search_bar": "auto"
+            },
+            "time": null,
+            "split_by": {
+              "tags": [],
+              "keys": []
+            },
+            "graph_size": "m"
+          }
+        },
+        {
+          "id": "mgar8d6o",
+          "type": "notebook_cells",
+          "attributes": {
+            "definition": {
+              "type": "markdown",
+              "text": "## Cloud Security Management (CSM)"
+            }
+          }
+        },
+        {
+          "id": "dc3ayjcv",
+          "type": "notebook_cells",
+          "attributes": {
+            "definition": {
+              "title": "CSPM Hosts - Agent",
+              "type": "query_table",
+              "requests": [
+                {
+                  "queries": [
+                    {
+                      "data_source": "metrics",
+                      "name": "query1",
+                      "query": "avg:datadog.security_agent.compliance.running{*} by {host}",
+                      "aggregator": "avg"
+                    }
+                  ],
+                  "response_format": "scalar",
+                  "sort": {
+                    "count": 500,
+                    "order_by": [
+                      {
+                        "type": "formula",
+                        "index": 0,
+                        "order": "desc"
+                      }
+                    ]
+                  },
+                  "formulas": [
+                    {
+                      "cell_display_mode": "bar",
+                      "formula": "query1"
+                    }
+                  ]
+                }
+              ],
+              "has_search_bar": "auto"
+            },
+            "time": null,
+            "graph_size": "m"
+          }
+        },
+        {
+          "id": "mkv1igtn",
+          "type": "notebook_cells",
+          "attributes": {
+            "definition": {
+              "title": "CSPM Hosts - AWS",
+              "type": "query_table",
+              "requests": [
+                {
+                  "queries": [
+                    {
+                      "data_source": "metrics",
+                      "name": "query1",
+                      "query": "avg:datadog.cloud_configuration.running{*} by {host}",
+                      "aggregator": "avg"
+                    }
+                  ],
+                  "response_format": "scalar",
+                  "sort": {
+                    "count": 500,
+                    "order_by": [
+                      {
+                        "type": "formula",
+                        "index": 0,
+                        "order": "desc"
+                      }
+                    ]
+                  },
+                  "formulas": [
+                    {
+                      "cell_display_mode": "bar",
+                      "formula": "query1"
+                    }
+                  ]
+                }
+              ],
+              "has_search_bar": "auto"
+            },
+            "time": null,
+            "graph_size": "m"
+          }
+        },
+        {
+          "id": "39giorsj",
+          "type": "notebook_cells",
+          "attributes": {
+            "definition": {
+              "title": "CSPM Hosts - GCP",
+              "type": "query_table",
+              "requests": [
+                {
+                  "queries": [
+                    {
+                      "data_source": "metrics",
+                      "name": "query1",
+                      "query": "avg:datadog.cspm_gcp.running{*} by {host}",
+                      "aggregator": "avg"
+                    }
+                  ],
+                  "response_format": "scalar",
+                  "sort": {
+                    "count": 500,
+                    "order_by": [
+                      {
+                        "type": "formula",
+                        "index": 0,
+                        "order": "desc"
+                      }
+                    ]
+                  },
+                  "formulas": [
+                    {
+                      "cell_display_mode": "bar",
+                      "formula": "query1"
+                    }
+                  ]
+                }
+              ],
+              "has_search_bar": "auto"
+            },
+            "time": null,
+            "split_by": {
+              "tags": [],
+              "keys": []
+            },
+            "graph_size": "m"
+          }
+        },
+        {
+          "id": "apsb9wpz",
+          "type": "notebook_cells",
+          "attributes": {
+            "definition": {
+              "title": "CSPM Hosts - Azure",
+              "type": "query_table",
+              "requests": [
+                {
+                  "queries": [
+                    {
+                      "data_source": "metrics",
+                      "name": "query1",
+                      "query": "avg:datadog.cspm_azure.running{*} by {host}",
+                      "aggregator": "avg"
+                    }
+                  ],
+                  "response_format": "scalar",
+                  "sort": {
+                    "count": 500,
+                    "order_by": [
+                      {
+                        "type": "formula",
+                        "index": 0,
+                        "order": "desc"
+                      }
+                    ]
+                  },
+                  "formulas": [
+                    {
+                      "cell_display_mode": "bar",
+                      "formula": "query1"
+                    }
+                  ]
+                }
+              ],
+              "has_search_bar": "auto"
+            },
+            "time": null,
+            "graph_size": "m"
+          }
+        },
+        {
+          "id": "lv9ly1wm",
+          "type": "notebook_cells",
+          "attributes": {
+            "definition": {
+              "title": "CSPM Hosts - Azure App Services",
+              "type": "query_table",
+              "requests": [
+                {
+                  "queries": [
+                    {
+                      "data_source": "metrics",
+                      "name": "query1",
+                      "query": "avg:datadog.cspm_azure_asp.running{*} by {subscription_id,resource_group,name}",
+                      "aggregator": "avg"
+                    }
+                  ],
+                  "response_format": "scalar",
+                  "sort": {
+                    "count": 500,
+                    "order_by": [
+                      {
+                        "type": "formula",
+                        "index": 0,
+                        "order": "desc"
+                      }
+                    ]
+                  },
+                  "formulas": [
+                    {
+                      "cell_display_mode": "bar",
+                      "formula": "query1"
+                    }
+                  ]
+                }
+              ],
+              "has_search_bar": "auto"
+            },
+            "time": null,
+            "graph_size": "m"
+          }
+        },
+        {
+          "id": "r1kmlqif",
+          "type": "notebook_cells",
+          "attributes": {
+            "definition": {
+              "title": "CSPM Containers",
+              "type": "query_table",
+              "requests": [
+                {
+                  "queries": [
+                    {
+                      "data_source": "metrics",
+                      "name": "query1",
+                      "query": "avg:datadog.security_agent.compliance.containers_running{*} by {container_id}",
+                      "aggregator": "avg"
+                    }
+                  ],
+                  "response_format": "scalar",
+                  "sort": {
+                    "count": 500,
+                    "order_by": [
+                      {
+                        "type": "formula",
+                        "index": 0,
+                        "order": "desc"
+                      }
+                    ]
+                  },
+                  "formulas": [
+                    {
+                      "formula": "query1",
+                      "cell_display_mode": "bar"
+                    }
+                  ]
+                }
+              ],
+              "has_search_bar": "auto"
+            },
+            "time": null,
+            "split_by": {
+              "tags": [],
+              "keys": []
+            },
+            "graph_size": "m"
+          }
+        },
+        {
+          "id": "18hllxet",
+          "type": "notebook_cells",
+          "attributes": {
+            "definition": {
+              "type": "markdown",
+              "text": "## Application Security Management (ASM)"
+            }
+          }
+        },
+        {
+          "id": "4ohb04k3",
+          "type": "notebook_cells",
+          "attributes": {
+            "definition": {
+              "title": "Hosts",
+              "type": "query_table",
+              "requests": [
+                {
+                  "queries": [
+                    {
+                      "data_source": "metrics",
+                      "name": "query1",
+                      "query": "avg:datadog.appsec.host_instance{*} by {host}",
+                      "aggregator": "avg"
+                    }
+                  ],
+                  "response_format": "scalar",
+                  "sort": {
+                    "count": 500,
+                    "order_by": [
+                      {
+                        "type": "formula",
+                        "index": 0,
+                        "order": "desc"
+                      }
+                    ]
+                  },
+                  "formulas": [
+                    {
+                      "cell_display_mode": "bar",
+                      "formula": "query1"
+                    }
+                  ]
+                }
+              ],
+              "has_search_bar": "auto"
+            },
+            "time": null,
+            "graph_size": "m"
+          }
+        },
+        {
+          "id": "fbjwwvf3",
+          "type": "notebook_cells",
+          "attributes": {
+            "definition": {
+              "title": "ECS Fargate Tasks",
+              "type": "query_table",
+              "requests": [
+                {
+                  "queries": [
+                    {
+                      "data_source": "metrics",
+                      "name": "query1",
+                      "query": "avg:datadog.appsec.fargate_task_instance{*} by {task_arn}",
+                      "aggregator": "avg"
+                    }
+                  ],
+                  "response_format": "scalar",
+                  "sort": {
+                    "count": 500,
+                    "order_by": [
+                      {
+                        "type": "formula",
+                        "index": 0,
+                        "order": "desc"
+                      }
+                    ]
+                  },
+                  "formulas": [
+                    {
+                      "cell_display_mode": "bar",
+                      "formula": "query1"
+                    }
+                  ]
+                }
+              ],
+              "has_search_bar": "auto"
+            },
+            "time": null,
+            "graph_size": "m"
+          }
+        },
+        {
+          "id": "19hoigjp",
+          "type": "notebook_cells",
+          "attributes": {
+            "definition": {
+              "type": "markdown",
+              "text": "## Software Composition Analysis (SCA)"
+            }
+          }
+        },
+        {
+          "id": "1ijv8xor",
+          "type": "notebook_cells",
+          "attributes": {
+            "definition": {
+              "title": "Hosts",
+              "type": "query_table",
+              "requests": [
+                {
+                  "queries": [
+                    {
+                      "name": "query1",
+                      "data_source": "metrics",
+                      "query": "sum:datadog.appsec.risk_management.sca.host_instance{*} by {host}.as_count()",
+                      "aggregator": "avg"
+                    }
+                  ],
+                  "response_format": "scalar",
+                  "sort": {
+                    "count": 500,
+                    "order_by": [
+                      {
+                        "type": "formula",
+                        "index": 0,
+                        "order": "desc"
+                      }
+                    ]
+                  },
+                  "formulas": [
+                    {
+                      "formula": "count_not_null(query1)",
+                      "cell_display_mode": "bar"
+                    }
+                  ]
+                }
+              ],
+              "has_search_bar": "auto"
+            },
+            "time": null
+          }
+        },
+        {
+          "id": "puga3vm7",
+          "type": "notebook_cells",
+          "attributes": {
+            "definition": {
+              "title": "Fargate Tasks",
+              "type": "query_table",
+              "requests": [
+                {
+                  "queries": [
+                    {
+                      "name": "query1",
+                      "data_source": "metrics",
+                      "query": "sum:datadog.sca.fargate_task_instance{*} by {task_arn}.as_count()",
+                      "aggregator": "avg"
+                    }
+                  ],
+                  "response_format": "scalar",
+                  "sort": {
+                    "count": 500,
+                    "order_by": [
+                      {
+                        "type": "formula",
+                        "index": 0,
+                        "order": "desc"
+                      }
+                    ]
+                  },
+                  "formulas": [
+                    {
+                      "formula": "count_not_null(query1)",
+                      "cell_display_mode": "bar"
+                    }
+                  ]
+                }
+              ],
+              "has_search_bar": "auto"
+            },
+            "time": null
+          }
+        }
+      ],
+      "template_variables": []
+    }
+  }
+}
